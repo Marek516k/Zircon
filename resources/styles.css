@@ -42,6 +42,15 @@ h1 {
     line-height: 1.1;
 }
 
+#signin-title img {
+    display: block;
+    width: 112px;
+    height: 112px;
+    margin-inline: auto;
+    margin-bottom: 36px;
+    object-fit: contain;
+}
+
 form {
     display: grid;
     gap: 10px;
