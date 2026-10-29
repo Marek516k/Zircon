@@ -1,13 +1,23 @@
-# Developer tools' files
+# files
+instructions.txt
 .lite_workspace.lua
 
-# Neutralinojs binaries and builds
+# binaries and builds
 /bin
 /dist
 
-# Neutralinojs client (minified)
+# client
 neutralino.js
 
 # Neutralinojs related files
 .storage
 *.log
+neutralino.config.json
+
+# Python server shi
+/server
+__pycache__/
+*.py[cod]
+server/.venv/
+server/zircon.sqlite3*
+auth_info.json
