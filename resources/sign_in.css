@@ -94,7 +94,34 @@ button:hover {
 .form-message {
     min-height: 18px;
     margin: 8px 0 0;
-    color: #1c645a;
+    color: #a34539;
     font-size: 13px;
     text-align: center;
+}
+
+.auth-toggle {
+    display: block;
+    margin: 10px auto 0;
+    padding: 8px 10px;
+    color: #1c645a;
+    background: transparent;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.auth-toggle:hover {
+    color: #144b44;
+    background: transparent;
+    text-decoration: underline;
+    transform: none;
+}
+
+@media (max-width: 480px) {
+    .signin-panel {
+        padding: 28px 22px;
+    }
+
+    #signin-title img {
+        margin-bottom: 24px;
+    }
 }

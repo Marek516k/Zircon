@@ -1,29 +1,84 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zircon</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css?v=1">
 </head>
 
 <body>
     <main id="neutralinoapp">
-        <div class="boxes">
-            <div class="box one">
-                <button class="add-server-btn" type="button" aria-label="Add server">+</button>
+        <aside class="server-rail" aria-label="Chat servers">
+            <div class="server-list" id="server-list" aria-label="Your servers"></div>
+            <button class="server-add" id="open-server-dialog" type="button" aria-label="Add or join a server" title="Add or join a server">+</button>
+        </aside>
+
+        <aside class="channel-sidebar" aria-label="Channels">
+            <header class="sidebar-header">
+                <h1 id="server-name">Your servers</h1>
+                <button class="icon-button" id="open-channel-dialog" type="button" aria-label="Create a channel" title="Create a channel" disabled>+</button>
+            </header>
+            <div class="channel-list" id="channel-list"></div>
+            <section class="account-panel">
+                <div class="account-avatar" id="account-avatar" aria-hidden="true">?</div>
+                <span class="account-name" id="account-name">Connecting...</span>
+                <button class="icon-button logout-button" id="logout-button" type="button" aria-label="Sign out" title="Sign out">↪</button>
+            </section>
+        </aside>
+
+        <section class="chat-panel" aria-label="Chat">
+            <header class="chat-header">
+                <div>
+                    <h2 id="channel-heading">Welcome to Zircon</h2>
+                    <p id="connection-status" role="status">Connecting to your server...</p>
+                </div>
+                <p class="chat-notice" id="chat-notice" role="status" aria-live="polite"></p>
+            </header>
+            <div class="message-list" id="message-list" aria-live="polite">
+                <p class="empty-state">Choose a server and channel to get started.</p>
             </div>
-            <div class="box two"></div>
-            <div class="box three"></div>
-            <div class="box four"></div>
-            <div class="box five">
-                <input type="text" class="box-input" placeholder="type here.." aria-label="Box 5 text input">
-            </div>
-        </div>
+            <form class="message-form" id="message-form">
+                <label class="visually-hidden" for="message-input">Write a message</label>
+                <input id="message-input" name="content" type="text" maxlength="4000" placeholder="Choose a channel to start chatting..." autocomplete="off" disabled>
+                <button type="submit" id="send-button" disabled>Send</button>
+            </form>
+        </section>
     </main>
+
+    <dialog id="server-dialog" class="app-dialog">
+        <form class="dialog-form" id="create-server-form">
+            <h2>Create a server</h2>
+            <label for="new-server-name">Server name</label>
+            <input id="new-server-name" name="name" type="text" maxlength="64" required placeholder="Friends">
+            <button type="submit">Create server</button>
+            <p class="dialog-message" id="create-server-message" role="status"></p>
+        </form>
+        <form class="dialog-form" id="join-server-form">
+            <h2>Join a server</h2>
+            <label for="invite-code">Invite code</label>
+            <input id="invite-code" name="invite_code" type="text" maxlength="128" required placeholder="Paste an invite code">
+            <button type="submit">Join server</button>
+            <p class="dialog-message" id="join-server-message" role="status"></p>
+        </form>
+        <button class="dialog-close" type="button" data-close-dialog>Done</button>
+    </dialog>
+
+    <dialog id="channel-dialog" class="app-dialog">
+        <form class="dialog-form" id="create-channel-form">
+            <h2>Create a channel</h2>
+            <label for="new-channel-name">Channel name</label>
+            <input id="new-channel-name" name="name" type="text" maxlength="50" required placeholder="general">
+            <button type="submit">Create channel</button>
+            <p class="dialog-message" id="create-channel-message" role="status"></p>
+        </form>
+        <button class="dialog-close" type="button" data-close-dialog>Done</button>
+    </dialog>
+
     <script src="js/neutralino.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=1"></script>
+
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 # files
 instructions.txt
 .lite_workspace.lua
+index.html
 
 # binaries and builds
 /bin
@@ -9,15 +10,15 @@ instructions.txt
 # client
 neutralino.js
 
-# Neutralinojs related files
+# Neutralinojs files
 .storage
 *.log
 neutralino.config.json
 
-# Python server shi
-/server
+# backend
 __pycache__/
 *.py[cod]
 server/.venv/
 server/zircon.sqlite3*
 auth_info.json
+__init__.py

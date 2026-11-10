@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zircon</title>
-    <link rel="stylesheet" href="sign_in.css">
+    <link rel="stylesheet" href="sign_in.css?v=1">
 </head>
 
 <body>
@@ -13,20 +13,24 @@
         <section class="signin-panel" aria-labelledby="signin-title">
             <h1 id="signin-title"><img src="icons/appIcon.png" alt="Zircon Logo"></h1>
             <form id="signin-form">
+                <label for="server-url">Chat server URL</label>
+                <input id="server-url" name="server_url" type="url" autocomplete="url" placeholder="http://127.0.0.1:8000" value="http://127.0.0.1:8000" required>
+
                 <label for="username">Username</label>
-                <input id="username" name="username" type="text" autocomplete="username" placeholder="Enter your username" required>
+                <input id="username" name="username" type="text" autocomplete="username" minlength="3" maxlength="32" placeholder="Enter your username" required>
 
                 <label for="password">Password</label>
-                <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required>
+                <input id="password" name="password" type="password" autocomplete="current-password" minlength="8" maxlength="256" placeholder="Enter your password" required>
 
-                <button type="submit">Sign in</button>
+                <button type="submit" id="submit-button">Sign in</button>
                 <p id="form-message" class="form-message" role="status" aria-live="polite"></p>
             </form>
+            <button type="button" class="auth-toggle" id="auth-toggle">Need an account? Create one</button>
         </section>
     </main>
 
     <script src="js/neutralino.js"></script>
-    <script src="js/sign_in.js"></script>
+    <script src="js/sign_in.js?v=1"></script>
 </body>
 
 </html>
